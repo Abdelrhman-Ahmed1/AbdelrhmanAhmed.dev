@@ -83,6 +83,46 @@
             color: #00c6ff;
         }
 
+        /* Global Background Animations */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23007bff" stroke-width="0.5" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.12;
+            z-index: -3;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 123, 255, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 198, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 123, 255, 0.06) 0%, transparent 50%);
+            animation: backgroundPulse 10s ease-in-out infinite;
+            z-index: -2;
+        }
+
+        /* Global Binary Rain */
+        .global-binary-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -93,32 +133,6 @@
             color: #fff;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23007bff" stroke-width="0.5" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            opacity: 0.12;
-        }
-
-        /* Animated Background Elements */
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(0, 123, 255, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(0, 198, 255, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(0, 123, 255, 0.06) 0%, transparent 50%);
-            animation: backgroundPulse 10s ease-in-out infinite;
         }
 
         .binary-rain {
@@ -613,6 +627,8 @@
         .about {
             background: rgba(10, 20, 40, 0.7);
             backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
         }
 
         .about-content {
@@ -661,6 +677,8 @@
         /* Experience Section */
         .experience {
             background: rgba(5, 15, 30, 0.7);
+            position: relative;
+            z-index: 1;
         }
 
         .timeline {
@@ -739,6 +757,8 @@
         .certificates {
             background: rgba(10, 20, 40, 0.6);
             backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
         }
 
         .certificates-grid {
@@ -850,6 +870,8 @@
         .projects {
             background: rgba(10, 20, 40, 0.6);
             backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
         }
 
         .projects-grid {
@@ -953,6 +975,8 @@
         /* Contact Section */
         .contact {
             background: rgba(5, 15, 30, 0.7);
+            position: relative;
+            z-index: 1;
         }
 
         .contact-content {
@@ -1042,6 +1066,8 @@
             padding: 2rem 0;
             color: #ccc;
             border-top: 2px solid #00c6ff;
+            position: relative;
+            z-index: 1;
         }
 
         .social-links {
@@ -1125,6 +1151,20 @@
     </style>
 </head>
 <body>
+    <!-- Global Background Animations -->
+    <div class="global-binary-rain">
+        <div class="binary-column zero">0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1</div>
+        <div class="binary-column one">1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0</div>
+        <div class="binary-column zero">0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0</div>
+        <div class="binary-column one">1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1</div>
+        <div class="binary-column zero">0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0</div>
+        <div class="binary-column one">1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1</div>
+        <div class="binary-column zero">0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1</div>
+        <div class="binary-column one">1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0</div>
+        <div class="binary-column zero">0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1</div>
+        <div class="binary-column one">1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0</div>
+    </div>
+
     <!-- Header -->
     <header>
         <nav class="container">
@@ -1141,18 +1181,6 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div class="binary-rain">
-            <div class="binary-column zero">0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1</div>
-            <div class="binary-column one">1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0</div>
-            <div class="binary-column zero">0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0</div>
-            <div class="binary-column one">1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1</div>
-            <div class="binary-column zero">0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0</div>
-            <div class="binary-column one">1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1</div>
-            <div class="binary-column zero">0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1</div>
-            <div class="binary-column one">1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>0</div>
-            <div class="binary-column zero">0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>1<br>0<br>1</div>
-            <div class="binary-column one">1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0<br>1<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>0<br>1<br>0<br>1<br>1<br>0<br>0<br>1<br>0<br>1<br>0</div>
-        </div>
         <div class="terminal-cursor">
             <div class="cursor-line"></div>
             <div class="cursor-line"></div>
